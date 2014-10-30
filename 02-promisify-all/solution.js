@@ -1,0 +1,1 @@
+// this is nice - promisify an entire module and call a few things in it
