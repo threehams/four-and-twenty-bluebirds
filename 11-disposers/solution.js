@@ -1,0 +1,1 @@
+// set up a function to close a connection regardless of status

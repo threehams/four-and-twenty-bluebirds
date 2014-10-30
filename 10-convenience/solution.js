@@ -1,0 +1,1 @@
+// cover some nice shortcuts. also remove shortcuts from other examples

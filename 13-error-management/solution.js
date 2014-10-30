@@ -1,0 +1,1 @@
+// cover error types and having multiple catch blocks for different errors
