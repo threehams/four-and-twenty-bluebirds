@@ -28,16 +28,15 @@ var fs = require('fs');
 var Promise = require('bluebird');
 var readFile = Promise.promisify(fs.readFile);
 
-var id;
-
-var run = readFile('users.json')
+// bind is optional but so nice!
+var run = readFile('users.json').bind(this)
   .then(JSON.parse)
   .then(function(data) {
-    id = data.id;
+    this.id = data.id;
     return readFile('photos.json')
   })
   .then(JSON.parse)
   .then(function (data) {
-    console.log(data[id]);
+    console.log(data[this.id]);
   })
   .catch(console.log);

@@ -18,6 +18,7 @@
   "homepage": "https://github.com/threehams/four-and-twenty-bluebirds",
   "dependencies": {
     "bluebird": "^2.3.10",
-    "lodash": "^2.4.1"
+    "lodash": "^2.4.1",
+    "request": "^2.47.0"
   }
 }
