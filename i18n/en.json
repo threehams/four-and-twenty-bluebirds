@@ -1,0 +1,19 @@
+{
+  "title": "Four and Twenty Bluebird",
+  "subtitle": "An intro to best practices for the Bluebird promise library",
+  "menu": {
+    "credits": "CREDITS"
+  },
+  "pass": {
+    "expectedPromisify": "Promise.promisify() was run",
+    "expectedPromisifyAll": "Promise.promisifyAll() was run",
+    "expectedReturn": "Return value was correct",
+    "expectedReadError": "File read error was thrown"
+  },
+  "fail": {
+    "expectedPromisify": "Promise.promisify() was't run",
+    "expectedPromisifyAll": "Promise.promisifyAll() was't run",
+    "expectedReturn": "Return value was not correct",
+    "expectedReadError": "Expected a file read error, but none was thrown"
+  }
+}
