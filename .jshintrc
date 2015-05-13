@@ -19,7 +19,6 @@
   "smarttabs": true,
   "white": false,
   "predef": [
-    "_",
     "moment",
     "angular",
     "-Promise"

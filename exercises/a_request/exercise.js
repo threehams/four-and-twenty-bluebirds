@@ -5,7 +5,6 @@ var Promise = require('bluebird');
 var exercise = require('workshopper-exercise')();
 var filecheck = require('workshopper-exercise/filecheck');
 var execute = require('workshopper-exercise/execute');
-var comparestdout = require('workshopper-exercise/comparestdout');
 var fs = Promise.promisifyAll(require('fs'));
 var faker = require('faker');
 var sinon = require('sinon');
@@ -18,8 +17,6 @@ exercise = filecheck(exercise);
 
 // execute the solution and submission in parallel with spawn()
 exercise = execute(exercise);
-
-//exercise = comparestdout(exercise);
 
 exercise.addSetup(function (mode, callback) {
   var filename = faker.name.firstName() + '.json';
@@ -53,7 +50,7 @@ exercise.addVerifyProcessor(function (callback) {
 exercise.addVerifyProcessor(function (callback) {
   var spy = sinon.spy(Promise, 'promisify');
   var submissionModule = proxyquire('../../' + this.submission, { 'bluebird': Promise });
-  submissionModule(this.submissionArgs[0]).bind(this).then(function(message) {
+  submissionModule(this.submissionArgs[0]).bind(this).then(function() {
     if (spy.called) {
       this.emit('pass', exercise.__('pass.expectedPromisify'));
       callback(null, true);
